@@ -1,0 +1,30 @@
+.blueprint-container {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    flex: 1 0 auto;
+  }
+  .toolbar{
+    position: fixed;
+    z-index: 2;
+    height:64px;
+  }
+  
+  h1.app-name {
+    margin-left: 8px;
+  }
+  
+  .sidenav-container {
+       flex: 1 0 auto;
+       margin-top:64px;
+  }
+  .sidenav{
+    min-width:300px;
+  }
+  .account-menu{
+    margin-left: auto;
+  }
+  

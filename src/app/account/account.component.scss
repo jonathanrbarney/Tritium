@@ -1,0 +1,15 @@
+@import '../../variables.scss';
+
+.u-title{
+    background:$secondary;
+    min-height:100px;
+    display:flex;
+    align-items: center;
+    font-size: 30px;
+}
+.udata{
+    font-size:20px;
+}
+.biodata{
+    background:$primary;
+}

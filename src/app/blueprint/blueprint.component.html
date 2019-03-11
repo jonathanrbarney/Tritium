@@ -1,0 +1,80 @@
+<div class="blueprint-container" *ngIf="Usnap !== null">
+  <mat-toolbar color="primary" class="toolbar mat-elevation-z6">
+    <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+    <h1 class="app-name" (click)="router.navigateByUrl('/');">Tritium</h1>
+
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item routerLink='/account/{{Usnap.id}}'>My Account</button>
+      <button mat-menu-item (click)="auth.logout()">Log Out</button>
+    </mat-menu>
+
+    <button mat-button mat-raised-button [matMenuTriggerFor]="menu" class="account-menu" (click)="snav.close()">{{Usnap.first_name}} {{Usnap.last_name}}</button>
+
+  </mat-toolbar>
+
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #snav fixedInViewport fixedTopGap="64" class='sidenav'>
+        <mat-accordion>
+            <mat-expansion-panel class="mat-elevation-z12">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Search
+                </mat-panel-title>
+                <mat-panel-description>
+                  Looking for something specific?
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+            <div fxLayout="row" fxLayoutAlign="space-evenly center">
+              <mat-form-field>
+                <input matInput placeholder="Search">
+              </mat-form-field>
+              <button mat-raised-button color="primary">Search</button>
+            </div>
+            </mat-expansion-panel>          
+            <mat-expansion-panel class="mat-elevation-z12">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Quicklinks
+                </mat-panel-title>
+                <mat-panel-description>
+                  Commonly used links
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+          
+              <mat-nav-list>
+                  <a mat-list-item routerLink="/" (click)="snav.close()">Home</a>
+              </mat-nav-list>
+              
+            </mat-expansion-panel>
+            <mat-expansion-panel class="mat-elevation-z12">
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    Help
+                  </mat-panel-title>
+                  <mat-panel-description>
+                    For when you need help
+                  </mat-panel-description>
+                </mat-expansion-panel-header>
+            
+                <mat-nav-list>
+                    <a mat-list-item routerLink="/" (click)="snav.close()">SAPR</a>
+                    <a mat-list-item routerLink="/" (click)="snav.close()">Chaplain Corps</a>
+                    <a mat-list-item routerLink="/" (click)="snav.close()">PEERs</a>
+                    <a mat-list-item routerLink="/" (click)="snav.close()">Counselling</a>
+                    <a mat-list-item routerLink="/" (click)="snav.close()">Academic Study Support</a>
+                    <a mat-list-item routerLink="/" (click)="snav.close()">Athletic Support</a>
+                    <a mat-list-item routerLink="/" (click)="snav.close()">Website Techincal Support</a>
+                    <a mat-list-item routerLink="/" (click)="snav.close()">Suggest a Feature</a>
+                </mat-nav-list>
+                
+              </mat-expansion-panel>
+          </mat-accordion>
+      <mat-nav-list *ngFor="let lk of navList">
+          <a mat-list-item routerLink="/{{lk.link}}" (click)="snav.close()">{{lk.title}}</a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
