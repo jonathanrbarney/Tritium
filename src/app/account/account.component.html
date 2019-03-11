@@ -2,10 +2,10 @@
 <div class="u-title " fxLayout="row" fxLayoutAlign="space-around center">
   <p>{{acct.full_name}} </p>
 </div>
-<div fxLayout="column" fxLayout.gt-sm="row" fxLayoutAlign="space-evenly center" class='biodata mat-elevation-z6 padding-md'>
+<div fxLayout="column" fxLayout.gt-sm="row" fxLayoutAlign="space-evenly center" class='biodata mat-elevation-z0 padding-md'>
   <div>
-      <img *ngIf="acct.profile_pic !== null" src="{{acct.profile_pic}}" class="mat-elevation-z4">
-      <img src="https://d2x5ku95bkycr3.cloudfront.net/App_Themes/Common/images/profile/0_200.png" *ngIf="acct.profile_pic === null" class="mat-elevation-z4">
+      <img *ngIf="acct.profile_pic !== null" src="{{acct.profile_pic}}" class="mat-elevation-z6">
+      <img src="https://d2x5ku95bkycr3.cloudfront.net/App_Themes/Common/images/profile/0_200.png" *ngIf="acct.profile_pic === null" class="mat-elevation-z6">
   </div>
   <div fxLayout="column" fxLayoutAlign="start space-evenly" class='udata'>
     <p class='bio' style="margin-top:0;">{{acct.bio}}</p>

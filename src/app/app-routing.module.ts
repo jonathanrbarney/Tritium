@@ -12,6 +12,7 @@ import { AccountComponent } from './account/account.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { DirectoryComponent } from './directory/directory.component';
 import { AthleticsComponent } from './athletics/athletics.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes: Routes = [
   {
@@ -39,6 +40,12 @@ const routes: Routes = [
       {
         path: 'directory',
         component: DirectoryComponent,
+        canActivate: [AuthGuard],
+        data: { roles: ['None'] },
+      },
+      {
+        path: '',
+        component: DashboardComponent,
         canActivate: [AuthGuard],
         data: { roles: ['None'] },
       },

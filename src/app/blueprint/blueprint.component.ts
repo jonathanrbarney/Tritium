@@ -34,6 +34,10 @@ export class BlueprintComponent implements OnDestroy, OnInit{
         link: 'cas',
       },
       {
+        title: 'Athletics',
+        link: 'athletics',
+      },
+      {
         title: 'Medical',
         link: 'medical',
       },

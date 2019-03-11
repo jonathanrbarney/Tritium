@@ -1,4 +1,5 @@
 <div class="blueprint-container" *ngIf="Usnap !== null">
+  <!--redundant Usnap check-->
   <mat-toolbar color="primary" class="toolbar mat-elevation-z6">
     <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
     <h1 class="app-name" (click)="router.navigateByUrl('/');">Tritium</h1>
@@ -14,8 +15,9 @@
 
   <mat-sidenav-container class="sidenav-container">
     <mat-sidenav #snav fixedInViewport fixedTopGap="64" class='sidenav'>
-        <mat-accordion>
-            <mat-expansion-panel class="mat-elevation-z12">
+      <div class="mat-elevation-z6">
+<mat-accordion displayMode="flat">
+            <mat-expansion-panel class="mat-elevation-z0">
               <mat-expansion-panel-header>
                 <mat-panel-title>
                   Search
@@ -31,7 +33,7 @@
               <button mat-raised-button color="primary">Search</button>
             </div>
             </mat-expansion-panel>          
-            <mat-expansion-panel class="mat-elevation-z12">
+            <mat-expansion-panel class="mat-elevation-z0">
               <mat-expansion-panel-header>
                 <mat-panel-title>
                   Quicklinks
@@ -46,7 +48,7 @@
               </mat-nav-list>
               
             </mat-expansion-panel>
-            <mat-expansion-panel class="mat-elevation-z12">
+            <mat-expansion-panel class="mat-elevation-z0">
                 <mat-expansion-panel-header>
                   <mat-panel-title>
                     Help
@@ -69,11 +71,12 @@
                 
               </mat-expansion-panel>
           </mat-accordion>
+        </div>
       <mat-nav-list *ngFor="let lk of navList">
           <a mat-list-item routerLink="/{{lk.link}}" (click)="snav.close()">{{lk.title}}</a>
       </mat-nav-list>
     </mat-sidenav>
-    <mat-sidenav-content>
+    <mat-sidenav-content class='sidenav-content'>
       <router-outlet></router-outlet>
     </mat-sidenav-content>
   </mat-sidenav-container>

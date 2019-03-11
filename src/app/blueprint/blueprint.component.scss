@@ -20,6 +20,7 @@
   .sidenav-container {
        flex: 1 0 auto;
        margin-top:64px;
+       height: 100%;  //VERY IMPORTANT; NO IDEA WHY
   }
   .sidenav{
     min-width:300px;
