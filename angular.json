@@ -43,6 +43,8 @@
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
+              "src/robots.txt",
+              "src/.htaccess",
               "src/assets"
             ],
             "styles": [
